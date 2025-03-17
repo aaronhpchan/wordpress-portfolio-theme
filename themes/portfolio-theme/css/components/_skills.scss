@@ -1,0 +1,88 @@
+.skills {
+  background-color: $primary-color;
+  color: $light-color;
+  padding: 5% 0;
+  margin-bottom: $section-padding;
+
+  &-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  &-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 5%;
+    
+    i {
+      font-size: 80px;
+      margin-bottom: $base-margin;
+    }
+  }
+
+  @media screen and (max-width: 1200px) {
+    margin-bottom: $section-padding-mobile;
+    
+    &-item {
+      i {
+        font-size: 60px;
+      }
+
+      p {
+        font-size: calc($font-size-sm * 0.9);
+      }
+    }
+  }
+
+  @media screen and (max-width: 992px) {   
+    &-item {
+      margin: 0 2.5%;
+
+      i {
+        margin-bottom: calc($base-margin * 0.75);
+      }
+
+      p {
+        font-size: calc($font-size-sm * 0.8);
+      }
+    }
+  }
+
+  @media screen and (max-width: 776px) {   
+    &-item {
+      i {
+        font-size: 40px;
+      }
+
+      p {
+        font-size: calc($font-size-sm * 0.7);
+      }
+    }
+  }
+
+  @media screen and (max-width: 576px) {
+    &-container {
+      margin: 0;
+      
+    }
+    
+    &-item {
+      width: 30%;
+      margin: 0;
+
+      &:nth-of-type(+n+4) {
+        margin-top: 1.5rem;
+      }
+
+      i {
+        font-size: 60px;
+      }
+
+      p {
+        font-size: calc($font-size-sm * 0.8);
+      }
+    }
+  }
+}

@@ -1,0 +1,53 @@
+/* reset styles */
+* {
+  color: inherit;
+  margin: 0;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  color: $primary-color;
+  overflow-x: hidden;
+}
+
+ul {
+  padding: 0;
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+h1 {
+  color: $dark-color;
+  font-weight: 800;
+}
+
+h2 {
+  color: $dark-color;
+  font-weight: 800;
+  font-size: $font-size-lg;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+h3 {
+  color: $dark-color;
+  font-weight: 700;
+  font-size: $font-size-md;
+}
+
+p {
+  font-size: $font-size-sm;
+  line-height: 1.6;
+}
+
+.hidden {
+  display: none;
+}
+

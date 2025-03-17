@@ -1,0 +1,25 @@
+// themes colors
+$primary-color: #475569;
+$secondary-color: #3b82f6;
+$dark-color: #1e293b;
+$light-color: #F8F9FA;
+
+// spacing
+$base-padding: 1rem;
+$base-margin: 1rem;
+$section-padding: calc(1.75rem * 3);
+$section-padding-mobile: calc(1.75rem * 3 / 2);
+
+// borders
+$base-border-thickness: 1px;
+$base-border-radius: 5px;
+
+// box-shadow
+$base-box-shadow: 3px 6px 6px rgba(59, 130, 246, 0.3);
+
+// font sizes
+$base-font-size: 1rem;
+$font-size-xl: $base-font-size * 3;
+$font-size-lg: $base-font-size * 2.25;
+$font-size-md: $base-font-size * 1.5;
+$font-size-sm: $base-font-size * 1.125;

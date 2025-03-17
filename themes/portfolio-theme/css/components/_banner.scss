@@ -1,0 +1,128 @@
+@mixin mobile-padding() {
+  padding-left: $section-padding-mobile;
+  padding-right: $section-padding-mobile;
+}
+
+.banner {
+  height: 100%;
+  padding: calc($section-padding * 2) $section-padding $section-padding;
+  display: flex;
+
+  &-container {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    line-height: 1.4;
+
+    h1 {
+      font-size: 80px;
+    }
+
+    img {
+      width: 100%;
+    }
+  }
+
+  &-intro {
+    display: block;
+    font-size: 30px;
+    color: $primary-color;
+  }
+
+  &-role {
+    font-size: 34px;
+    font-weight: 800;
+    color: $secondary-color;
+  }
+
+  &-links__wrapper {
+    margin-top: $base-margin;
+    
+    button {
+      line-height: 2rem;
+      font-weight: 600;
+      font-size: 18px;
+      background-color: transparent;
+      color: $dark-color;
+      border: $base-border-thickness solid $secondary-color;
+      border-radius: $base-border-radius;
+      padding: 0.75rem 10%;
+      margin-top: $base-margin;
+      cursor: pointer;
+      transition: all 0.25s ease-in-out;
+  
+      &:hover {
+        box-shadow: $base-box-shadow;
+        transform: translateY(-4.5px);
+      }
+    }
+  }
+
+  @media screen and (min-width: 2000px) {
+    &-links__wrapper {
+      button {
+        font-size: 24px;
+        padding: 1.125rem 2.25rem;
+      }
+    }
+  }
+
+  @media screen and (max-width: 1200px) {
+    @include mobile-padding();
+    
+    &-container {      
+      h1 {
+        font-size: calc(80px * 0.9);
+      }
+    }
+  }
+
+  @media screen and (max-width: 992px) {    
+    flex-direction: column;
+    align-items: center;
+
+    &-container {      
+      width: 100%;
+      max-width: 674px;
+      justify-content: center;
+
+      &:nth-of-type(2) {
+        margin-top: $section-padding-mobile;
+      }
+      
+      h1 {
+        font-size: calc(80px * 0.8);
+      }
+
+      img {
+        max-width: 380px;
+      }
+    }
+
+    &-links__wrapper {
+      margin-top: calc($base-margin * 0.5);
+    }
+  }
+
+  @media screen and (max-width: 576px) {
+    &-intro {
+      font-size: calc(30px * 0.9);
+    }
+
+    &-role {
+      font-size: calc(34px * 0.9);
+    }
+  }
+
+  @media screen and (max-width: 500px) {
+    &-container {            
+      h1 {
+        font-size: calc(80px * 0.6);
+      }
+
+      img {
+        max-width: 290px;
+      }
+    }
+  }
+}

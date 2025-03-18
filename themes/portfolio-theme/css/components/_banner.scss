@@ -21,6 +21,10 @@
     img {
       width: 100%;
     }
+
+    &__text {
+      overflow: hidden;
+    }
   }
 
   &-intro {
@@ -30,9 +34,33 @@
   }
 
   &-role {
+    position: relative;
     font-size: 34px;
     font-weight: 800;
     color: $secondary-color;
+    display: inline;
+    width: 100%;
+
+    &__text:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background-color: white; 
+      border-left: 2px solid $secondary-color;
+      animation: text-animation 4s steps(12) infinite;
+    }
+
+    @keyframes text-animation {
+      40%, 60% {
+        left: 100%;
+      }
+      100% {
+        left: 0;
+      }
+    }
   }
 
   &-links__wrapper {

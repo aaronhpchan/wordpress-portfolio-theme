@@ -3,9 +3,9 @@
 <div class="banner" id="banner">
   <div class="banner-container">
     <div>
-      <div>
+      <div class="banner-container__text">
         <h1><span class="banner-intro">Hello, I am</span><?php echo get_bloginfo('name'); ?></h1>
-        <p class="banner-role">Web Developer</p>
+        <p class="banner-role"><span class="banner-role__text">Web Developer</span></p>
       </div>
       <div class="banner-links__wrapper">
         <a href="#contact">

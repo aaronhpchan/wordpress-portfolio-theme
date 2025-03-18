@@ -1,3 +1,4 @@
+/* Mobile navbar */
 class MobileNavbar {
   constructor() {
     const navbarBtn = document.querySelector(".navbar-btn");
@@ -32,3 +33,22 @@ class MobileNavbar {
   }
 }
 const mobileNavbar = new MobileNavbar();
+
+/* Text animation */
+class TextAnimation {
+  constructor() {
+    const movingText = document.querySelector(".banner-role__text");
+
+    const textLoad = () => {
+      setTimeout(() => {
+        movingText.textContent = "Web Developer";
+      }, 750);
+      setTimeout(() => {
+        movingText.textContent = "WordPress Developer";
+      }, 4750);
+    }
+    textLoad();
+    setInterval(textLoad, 8750);
+  }
+}
+const textAnimation = new TextAnimation();

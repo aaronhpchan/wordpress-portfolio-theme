@@ -153,6 +153,32 @@ p {
   }
 }
 
+.fade-in {
+  opacity: 0;
+  transition: opacity 500ms ease-in;
+}
+.fade-in.appear {
+  opacity: 1;
+}
+
+.animation-left {
+  transform: translateX(-50%);
+}
+
+.animation-right {
+  transform: translateX(50%);
+}
+
+.animation-left, .animation-right {
+  transition: opacity 500ms ease-in, transform 750ms ease-in;
+  opacity: 0;
+}
+
+.animation-left.appear, .animation-right.appear {
+  transform: translateX(0);
+  opacity: 1;
+}
+
 .banner {
   height: 100%;
   padding: 10.5rem 5.25rem 5.25rem;
@@ -195,7 +221,7 @@ p {
   width: 100%;
   background-color: white;
   border-left: 2px solid #3b82f6;
-  animation: text-animation 4s steps(12) infinite;
+  animation: text-animation 4s steps(20) infinite;
 }
 @keyframes text-animation {
   40%, 60% {
@@ -457,6 +483,9 @@ p {
 .projects-item__links a:hover {
   color: #3b82f6;
 }
+.projects-item__right {
+  order: 1;
+}
 @media screen and (max-width: 1200px) {
   .projects {
     padding: 5.25rem 2.625rem 2.625rem;
@@ -484,7 +513,7 @@ p {
   width: 550px;
 }
 .contact-map {
-  margin-right: 1rem;
+  margin-right: 1.25rem;
 }
 .contact-map iframe {
   width: 100%;
@@ -492,7 +521,7 @@ p {
   border-radius: 5px;
 }
 .contact-form {
-  margin-left: 1rem;
+  margin-left: 1.25rem;
 }
 .contact-form div.wpforms-container-full {
   margin: 0;

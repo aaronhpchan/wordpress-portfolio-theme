@@ -278,6 +278,9 @@ p {
   .banner-container img {
     max-width: 290px;
   }
+  .banner-role {
+    font-size: 26px;
+  }
 }
 
 .skills {

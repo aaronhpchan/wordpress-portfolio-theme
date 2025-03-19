@@ -41,14 +41,14 @@ class TextAnimation {
 
     const textLoad = () => {
       setTimeout(() => {
-        movingText.textContent = "Web Developer";
-      }, 750);
+        movingText.textContent = "Web Developer"; //13 characters
+      }, 0);
       setTimeout(() => {
-        movingText.textContent = "WordPress Developer";
-      }, 4750);
+        movingText.textContent = "WordPress Developer"; //19 characters
+      }, 4000);
     }
     textLoad();
-    setInterval(textLoad, 8750);
+    setInterval(textLoad, 8000);
   }
 }
 const textAnimation = new TextAnimation();

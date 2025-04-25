@@ -1,16 +1,8 @@
 /* 
-  Theme Name: Portfolio
-  Theme URI: https://aaronwebdev.com
+  Theme Name: Portfolio Theme
   Author: Aaron Chan
-  Author URI: https://aaronwebdev.com
-  Description: A WordPress theme for portfolio website
   Version: 1.0
-  Requires at least: 5.9
-  Tested up to: 6.7.2
-  Requires PHP: 8.0
-  Text domain: portfolio
 */
-
 /* reset styles */
 * {
   color: inherit;
@@ -213,31 +205,12 @@ p {
   color: #475569;
 }
 .banner-role {
-  position: relative;
+  min-height: 34px;
   font-size: 34px;
   font-weight: 800;
   color: #3b82f6;
+  border-right: 2px solid #3b82f6;
   display: inline;
-  width: 100%;
-}
-.banner-role__text:before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  background-color: white;
-  border-left: 2px solid #3b82f6;
-  animation: text-animation 4s steps(20) infinite;
-}
-@keyframes text-animation {
-  40%, 60% {
-    left: 100%;
-  }
-  100% {
-    left: 0;
-  }
 }
 .banner-links__wrapper {
   margin-top: 1rem;
@@ -302,6 +275,7 @@ p {
     font-size: 27px;
   }
   .banner-role {
+    min-height: 30.6px;
     font-size: 30.6px;
   }
 }
@@ -313,7 +287,8 @@ p {
     max-width: 290px;
   }
   .banner-role {
-    font-size: 26px;
+    min-height: 25px;
+    font-size: 25px;
   }
 }
 

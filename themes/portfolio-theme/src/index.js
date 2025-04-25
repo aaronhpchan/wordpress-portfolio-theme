@@ -36,22 +36,48 @@ const mobileNavbar = new MobileNavbar();
 
 /* Text animation */
 class TextAnimation {
-  constructor() {
-    const movingText = document.querySelector(".banner-role__text");
+  constructor(elementSelector, texts, typingSpeed = 120, pauseTime = 750) {
+    this.element = document.querySelector(elementSelector);
+    this.texts = texts;
+    this.typingSpeed = typingSpeed;
+    this.pauseTime = pauseTime;
+    this.currentIndex = 0;
+    this.start();
+  }
 
-    const textLoad = () => {
-      setTimeout(() => {
-        movingText.textContent = "Web Developer"; //13 characters
-      }, 0);
-      setTimeout(() => {
-        movingText.textContent = "WordPress Developer"; //19 characters
-      }, 4000);
+  async start() {
+    while (true) {
+      const text = this.texts[this.currentIndex];
+      await this.typeText(text);
+      await this.wait(this.pauseTime);
+      await this.deleteText();
+      this.currentIndex = (this.currentIndex + 1) % this.texts.length;
     }
-    textLoad();
-    setInterval(textLoad, 8000);
+  }
+
+  async typeText(text) {
+    for (let i = 0; i <= text.length; i++) {
+      this.element.textContent = text.slice(0, i);
+      await this.wait(this.typingSpeed);
+    }
+  }
+
+  async deleteText() {
+    let text = this.element.textContent;
+    for (let i = text.length; i >= 0; i--) {
+      this.element.textContent = text.slice(0, i);
+      await this.wait(this.typingSpeed / 1.5);
+    }
+  }
+
+  wait(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
   }
 }
-const textAnimation = new TextAnimation();
+const textAnimation = new TextAnimation(".banner-role__text", [
+  "Web Developer",
+  "WordPress Developer"
+]);
 
 /* Intersection observer animation */
 class ObserverAnimation {

@@ -179,6 +179,12 @@ p {
   opacity: 1;
 }
 
+@media screen and (max-width: 1200px) {
+  .animation-left, .animation-right {
+    transform: translateX(0);
+    transition: opacity 500ms ease-in;
+  }
+}
 .banner {
   height: 100%;
   padding: 10.5rem 5.25rem 5.25rem;
@@ -459,7 +465,7 @@ p {
   margin-bottom: 0;
 }
 .projects-item__links a {
-  transition: all 0.35s ease-in-out;
+  transition: color 0.35s ease-in-out;
   text-decoration: underline;
   margin-right: 1.5rem;
 }

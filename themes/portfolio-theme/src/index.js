@@ -1,4 +1,4 @@
-/* Mobile navbar */
+// Mobile navbar 
 class MobileNavbar {
   constructor() {
     const navbarBtn = document.querySelector(".navbar-btn");
@@ -34,7 +34,7 @@ class MobileNavbar {
 }
 const mobileNavbar = new MobileNavbar();
 
-/* Text animation */
+// Text animation 
 class TextAnimation {
   constructor(elementSelector, texts, typingSpeed = 120, pauseTime = 750) {
     this.element = document.querySelector(elementSelector);
@@ -79,7 +79,7 @@ const textAnimation = new TextAnimation(".banner-role__text", [
   "WordPress Developer"
 ]);
 
-/* Intersection observer animation */
+// Intersection observer animation 
 class ObserverAnimation {
   constructor() {
     const faders = document.querySelectorAll(".fade-in");
@@ -87,7 +87,7 @@ class ObserverAnimation {
 
     const appearOptions = {
       threshold: 0,
-      rootMargin: "0px 0px -250px 0px"
+      rootMargin: "0px 0px -200px 0px"
     };
 
     const appearOnScroll = new IntersectionObserver((entries, appearOnScroll) => {

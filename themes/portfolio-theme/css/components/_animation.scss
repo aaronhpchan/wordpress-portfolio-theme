@@ -24,3 +24,10 @@
   transform: translateX(0);
   opacity: 1;
 }
+
+@media screen and (max-width: 1200px) { 
+  .animation-left, .animation-right {
+    transform: translateX(0);
+    transition: opacity 500ms ease-in;
+  }
+}

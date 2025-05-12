@@ -1,3 +1,31 @@
+window.addEventListener("load", () => {
+  new Loader();
+  new TextAnimation(".banner-role__text", [
+    "Web Developer",
+    "WordPress Developer"
+  ]);
+});
+
+window.addEventListener("DOMContentLoaded", () => {
+  new MobileNavbar();
+  new ObserverAnimation();
+});
+
+// Loading dots animation
+class Loader {
+  constructor() {
+    const loader = document.querySelector(".loader");
+
+    if (loader) {
+      loader.classList.add("loader-hidden");
+  
+      loader.addEventListener("transitionend", () => {
+        loader.remove();
+      });
+    }
+  }
+}
+
 // Mobile navbar 
 class MobileNavbar {
   constructor() {
@@ -6,9 +34,9 @@ class MobileNavbar {
     const navbarLink = document.querySelectorAll(".navbar-mobile a");
 
     window.addEventListener("resize", resize);
-    navbarBtn.addEventListener("click", btnTrigger);
-    for (let i = 0; i < navbarLink.length; i++) {
-      navbarLink[i].addEventListener("click", closeNav);
+    if (navbarBtn && navbarMobile) {
+      navbarBtn.addEventListener("click", btnTrigger);
+      navbarLink.forEach(link => link.addEventListener("click", closeNav));
     }
 
     function btnTrigger() {
@@ -16,28 +44,33 @@ class MobileNavbar {
       navbarBtn.classList.toggle("fa-xmark");
       navbarMobile.classList.toggle("hidden");
       navbarMobile.classList.toggle("navbar-show");
+      navbarBtn.setAttribute("aria-expanded", !navbarMobile.classList.contains("hidden"));
+      navbarMobile.setAttribute("aria-hidden", navbarMobile.classList.contains("hidden"));
     }
 
     function closeNav() {
-      navbarMobile.classList.add("hidden");
-      navbarMobile.classList.remove("navbar-show");
-      navbarBtn.classList.remove("fa-xmark");
-      navbarBtn.classList.add("fa-bars");
+      navbarMobile.classList.replace("navbar-show", "hidden");
+      navbarBtn.classList.replace("fa-xmark", "fa-bars");
+      navbarBtn.setAttribute("aria-expanded", "false");
+      navbarMobile.setAttribute("aria-hidden", "true");
     }
 
     function resize() {
       if (window.innerWidth > 768) {
         closeNav();
+      } else {
+        navbarBtn.setAttribute("aria-hidden", "false");
       }
     }
   }
 }
-const mobileNavbar = new MobileNavbar();
 
 // Text animation 
 class TextAnimation {
   constructor(elementSelector, texts, typingSpeed = 120, pauseTime = 750) {
     this.element = document.querySelector(elementSelector);
+    if (!this.element) return;
+
     this.texts = texts;
     this.typingSpeed = typingSpeed;
     this.pauseTime = pauseTime;
@@ -74,10 +107,6 @@ class TextAnimation {
     return new Promise(resolve => setTimeout(resolve, ms));
   }
 }
-const textAnimation = new TextAnimation(".banner-role__text", [
-  "Web Developer",
-  "WordPress Developer"
-]);
 
 // Intersection observer animation 
 class ObserverAnimation {
@@ -109,4 +138,3 @@ class ObserverAnimation {
     });
   }
 }
-const observerAnimation = new ObserverAnimation();

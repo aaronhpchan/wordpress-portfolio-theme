@@ -4,8 +4,8 @@
 }
 
 .banner {
-  height: 100vh;
-  padding: 0 $section-padding;
+  height: calc(100vh - (84px - 1.75rem));
+  padding: calc(84px - 1.75rem) $section-padding 0;
   display: flex;
   justify-content: center;
 
@@ -110,6 +110,11 @@
     &-links__wrapper {
       margin-top: calc($base-margin * 0.5);
     }
+  }
+
+  @media screen and (max-width: 768px) {
+    height: calc(100vh - (88px - 1.75rem));
+    padding-top: calc(88px - 1.75rem);
   }
 
   @media screen and (max-width: 576px) {

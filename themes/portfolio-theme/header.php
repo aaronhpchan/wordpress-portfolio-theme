@@ -6,6 +6,11 @@
     <?php wp_head(); ?>
   </head>
   <body>
+    <div class="loader">
+      <div class="loader-dot"></div>
+      <div class="loader-dot"></div>
+      <div class="loader-dot"></div>
+    </div>
     <nav class="navbar">
       <div class="navbar-logo">
         <a href="<?php echo home_url(); ?>">
@@ -19,7 +24,7 @@
         <li><a href="#contact">Contact</a></li>
       </ul>
       <i class="navbar-btn fa-solid fa-bars" aria-hidden="true"></i>
-      <div class="navbar-mobile hidden">
+      <div class="navbar-mobile hidden" aria-hidden="true">
         <ul>
           <li><a href="#">Home</a></li>
           <li><a href="#about">About</a></li>
@@ -40,7 +45,7 @@
               $socials->the_post(); ?>
               <li>
                 <a href="<?php the_field('social_link') ?>" target="_blank">
-                  <i class="<?php the_field('social_class') ?>" aria-hidden="true"></i>
+                  <i class="<?php the_field('social_class') ?>"></i>
                 </a>
               </li>
             <?php }

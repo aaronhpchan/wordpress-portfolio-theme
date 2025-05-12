@@ -3,7 +3,6 @@
   Author: Aaron Chan
   Version: 1.0
 */
-/* reset styles */
 * {
   color: inherit;
   margin: 0;
@@ -39,6 +38,7 @@ h2 {
   font-size: 2.25rem;
   text-align: center;
   text-transform: uppercase;
+  margin-bottom: 4rem;
 }
 
 h3 {
@@ -186,9 +186,10 @@ p {
   }
 }
 .banner {
-  height: 100%;
-  padding: 10.5rem 5.25rem 5.25rem;
+  height: 100vh;
+  padding: 0 5.25rem;
   display: flex;
+  justify-content: center;
 }
 .banner-container {
   width: 50%;
@@ -313,7 +314,7 @@ p {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 0 5%;
+  margin: 0 2.5%;
 }
 .skills-item i {
   font-size: 80px;
@@ -331,9 +332,6 @@ p {
   }
 }
 @media screen and (max-width: 992px) {
-  .skills-item {
-    margin: 0 2.5%;
-  }
   .skills-item i {
     margin-bottom: 0.75rem;
   }
@@ -369,73 +367,55 @@ p {
 }
 
 .about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   padding: 5.25rem;
 }
 .about-container {
-  display: flex;
-  padding-top: 5.25rem;
+  display: grid;
+  align-items: center;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 5rem;
+  max-width: 1140px;
 }
 .about-img {
   display: flex;
-  height: 50vh;
-  width: 50vh;
-  aspect-ratio: 1/1;
-  padding-left: 5%;
+  justify-content: flex-end;
 }
 .about-img img {
+  width: 350px;
+  max-height: 350px;
   border-radius: 5px;
 }
 .about-info {
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
-  padding-left: 10%;
-  padding-right: 5%;
-}
-.about-info__container {
-  display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 1.25rem;
 }
 .about-info__field {
   font-weight: 700;
   text-transform: uppercase;
   color: #1e293b;
 }
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 992px) {
   .about {
-    padding-bottom: 2.625rem;
+    padding: 5.25rem 5.25rem 2.625rem;
   }
   .about-container {
-    flex-direction: column;
-    align-items: center;
+    display: block;
   }
   .about-img {
-    padding-left: 0;
+    justify-content: center;
   }
   .about-info {
-    padding: 2.625rem 2.625rem 0;
-  }
-  .about-info__container div {
-    margin-top: 1rem;
+    padding-top: 2.625rem;
   }
 }
 @media screen and (max-width: 768px) {
   .about {
     padding: 5.25rem 2.625rem 2.625rem;
-  }
-  .about-info {
-    padding: 2.625rem 0 0;
-  }
-  .about-info__container {
-    flex-direction: column;
-    justify-content: flex-start;
-    margin-top: 0;
-  }
-}
-@media screen and (max-width: 576px) {
-  .about-img {
-    width: 60vw;
-    height: 60vw;
   }
 }
 
@@ -446,13 +426,15 @@ p {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 2.5rem;
-  padding-top: 5.25rem;
+}
+.projects-container:not(:last-of-type) {
+  margin-bottom: 1rem;
 }
 .projects-item {
   display: flex;
   align-items: center;
 }
-.projects-item__info p, .projects-item__info div {
+.projects-item__info p, .projects-item__info div:nth-of-type(1) {
   margin-top: 0.5rem;
   margin-bottom: 2rem;
 }
@@ -475,9 +457,9 @@ p {
 .projects-item__right {
   order: 1;
 }
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 992px) {
   .projects {
-    padding: 5.25rem 2.625rem 2.625rem;
+    padding: 5.25rem 5.25rem 2.625rem;
   }
   .projects-container {
     display: block;
@@ -489,6 +471,11 @@ p {
     margin-bottom: 0;
   }
 }
+@media screen and (max-width: 768px) {
+  .projects {
+    padding: 5.25rem 2.625rem 2.625rem;
+  }
+}
 
 .contact {
   padding: 5.25rem;
@@ -496,21 +483,20 @@ p {
 .contact-container {
   display: flex;
   justify-content: center;
-  padding-top: 5.25rem;
 }
 .contact-map, .contact-form {
   width: 550px;
 }
 .contact-map {
-  margin-right: 1.25rem;
+  margin-right: 1.875rem;
 }
 .contact-map iframe {
   width: 100%;
-  aspect-ratio: 550/430;
+  height: 100%;
   border-radius: 5px;
 }
 .contact-form {
-  margin-left: 1.25rem;
+  margin-left: 1.875rem;
 }
 .contact-form div.wpforms-container-full {
   margin: 0;
@@ -552,6 +538,10 @@ p {
   .contact-map {
     margin-right: 0;
     margin-bottom: 1rem;
+  }
+  .contact-map iframe {
+    height: initial;
+    aspect-ratio: 550/430;
   }
   .contact-form {
     margin-left: 0;

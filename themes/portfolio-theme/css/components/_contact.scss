@@ -4,7 +4,6 @@
   &-container {
     display: flex;
     justify-content: center;
-    padding-top: $section-padding;
   }
 
   &-map, &-form {
@@ -12,17 +11,17 @@
   }
 
   &-map {
-    margin-right: 1.25rem;
+    margin-right: 1.875rem;
     
     iframe {
       width: 100%;
-      aspect-ratio: 550 / 430;
+      height: 100%;
       border-radius: $base-border-radius;
     }
   }
 
   &-form {
-    margin-left: 1.25rem;
+    margin-left: 1.875rem;
 
     div.wpforms-container-full {
       margin: 0;
@@ -77,6 +76,11 @@
     &-map {
       margin-right: 0;
       margin-bottom: $base-margin;
+
+      iframe {
+        height: initial;
+        aspect-ratio: 550 / 430;
+      }
     }
 
     &-form {

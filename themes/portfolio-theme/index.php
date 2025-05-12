@@ -57,15 +57,9 @@
         </div>
         <div class="about-info fade-in">
           <div class="about-info__text"><?php the_content(); ?></div>
-          <div class="about-info__container">
-            <div>
-              <p class="about-info__field">Location</p>
-              <p><?php the_field('about_location'); ?></p>
-            </div>
-            <div>
-              <p class="about-info__field">Education</p>
-              <p><?php the_field('about_education'); ?></p>
-            </div>
+          <div>         
+            <p class="about-info__field">Education</p>
+            <p><?php the_field('about_education'); ?></p>
           </div>
         </div>
       </div>

@@ -1,4 +1,4 @@
-/* reset styles */
+// reset styles 
 * {
   color: inherit;
   margin: 0;
@@ -34,6 +34,7 @@ h2 {
   font-size: $font-size-lg;
   text-align: center;
   text-transform: uppercase;
+  margin-bottom: 4rem;
 }
 
 h3 {

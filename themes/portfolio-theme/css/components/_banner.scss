@@ -4,9 +4,10 @@
 }
 
 .banner {
-  height: 100%;
-  padding: calc($section-padding * 2) $section-padding $section-padding;
+  height: 100vh;
+  padding: 0 $section-padding;
   display: flex;
+  justify-content: center;
 
   &-container {
     width: 50%;
